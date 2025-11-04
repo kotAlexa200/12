@@ -1,36 +1,46 @@
- public class Calculator
- {
-        public static double Sum(double a, double b)
-        { return a + b;}
-        
-        public static double Minus(double a, double b)
-        {return a - b;}
-        
-        public static double Umnojenie(double a, double b)
-        {  return a * b; }
-        
-        public static double Delenie(double a, double b) 
+ using System;
+
+public class Calculator
+{
+    public static double Sum(double a, double b)
+    {
+        return a + b;
+    }
+
+    public static double Minus(double a, double b)
+    {
+        return a - b;
+    }
+
+    public static double Umnojenie(double a, double b)
+    {
+        return a * b;
+    }
+
+    public static double Delenie(double a, double b)
+    {
+        if (b == 0)
         {
-            if (b == 0)
-            {
-                  Console.WriteLine("ошибка");
-                  return double.NaN; 
-            } 
-            else { return a / b; }
+            Console.WriteLine("ошибка: деление на ноль");
+            return double.NaN; 
+        }
+        else
+        {
+            return a / b;
         }
     }
+}
 
- static void Main()
+public class Program
+{
+    static void Main()
     {
-        
-        Console.WriteLine("Сложение: " + Calculator.Add(20, 5));
-        Console.WriteLine("Вычитание: " + Calculator.Subtract(20, 5));
-        Console.WriteLine("Умножение: " + Calculator.Multiply(20, 5));
-        Console.WriteLine("Деление: " + Calculator.Divide(20, 5));
-        Console.WriteLine("Деление на ноль: " + Calculator.Divide(20, 0));
+        Console.WriteLine("Сложение: " + Calculator.Sum(20, 5));
+        Console.WriteLine("Вычитание: " + Calculator.Minus(20, 5));
+        Console.WriteLine("Умножение: " + Calculator.Umnojenie(20, 5));
+        Console.WriteLine("Деление: " + Calculator.Delenie(20, 5));
+        Console.WriteLine("Деление на ноль: " + Calculator.Delenie(20, 0));
 
-        
         Console.ReadLine();
-
-     }
     }
+}
